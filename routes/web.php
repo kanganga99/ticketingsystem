@@ -1,4 +1,10 @@
 <?php
+
+// use Illuminate\Support\Facades\Route;
+
+use Illuminate\Support\Facades\Route;
+
+
 Route::get('/', 'TicketController@create');
 Route::get('/home', function () {
     $route = Gate::denies('dashboard_access') ? 'admin.tickets.index' : 'admin.home';
